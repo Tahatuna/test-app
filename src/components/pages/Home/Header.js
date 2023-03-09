@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../img/header.png'
+import image from '../../img/header.png'
 
 function Header() {
     return (
@@ -25,3 +25,4 @@ function Header() {
 }
 
 export default Header
+

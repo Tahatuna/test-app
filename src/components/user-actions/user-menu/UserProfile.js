@@ -2,15 +2,12 @@ import React from 'react'
 
 function UserProfile() {
 
-
-
     const removeStorage = () => {
 
         localStorage.removeItem("userName")
         localStorage.removeItem("userId")
         localStorage.removeItem("profile")
         localStorage.removeItem("subscription")
-
         window.location.reload(false)
 
     }
