@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useFormik } from 'formik';
 import validationSchema from "./validations"
 import axios from 'axios';
@@ -36,7 +36,7 @@ function SigninModal() {
                 }
 
             } catch (error) {
-                console.log(error);
+                console.error(error.response.data);
             }
         },
         validationSchema
@@ -70,7 +70,7 @@ function SigninModal() {
                                     <input className="form-control" id="password" name="password" type="password" placeholder="*****" onChange={handleChange} value={values.password} />
                                     {errors.password && (<div className="text-start fs-9">Password must be longer than 5 characters</div>)}
                                 </div>
-                                <button type="submit" class="btn btn-primary mx-auto mt-3" style={{ width: 372 }}>Log in</button>
+                                <button type="submit" class="btn btn-primary mt-3 mx-auto" style={{ width: 372 }}>Log in</button>
                             </div>
 
                         </form>

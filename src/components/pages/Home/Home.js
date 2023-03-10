@@ -2,7 +2,9 @@ import React from 'react'
 import Category from './Category'
 import Header from './Header'
 
+
 function Home() {
+
   return (
     <div>
 

@@ -8,6 +8,8 @@ import SigninModal from './components/user-actions/login-register/SigninModal';
 import SignupModal from './components/user-actions/login-register/SignupModal';
 import UserProfile from './components/user-actions/user-menu/UserProfile';
 import { useState, useEffect } from 'react';
+
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -61,15 +63,15 @@ function App() {
             </div>
           </div>
         </nav>
-        {/* <Header />
-          
-            <HomeCategory /> */}
-        <Routes>
-          <Route exact path="/home" element={<Home />}> </Route>
-          <Route path="/tutors" element={<Tutors />}></Route>
-        </Routes>
 
         {/* *** */}
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="tutors" element={<Tutors />} />
+            <Route path="tutors/:category" element={<Tutors />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
 
         {/* *** */}
 
