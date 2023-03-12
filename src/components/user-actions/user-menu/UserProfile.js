@@ -26,8 +26,8 @@ function UserProfile() {
                         </svg>
                     </a>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><a className="dropdown-item" href="http://localhost:3000/profile">Account</a></li>
+                        <li><a className="dropdown-item" href="#">Notifications</a></li>
                         <hr/>
                         <li><a className="dropdown-item" href="#">Help</a></li>
                         <li><a className="dropdown-item" href="#" onClick={removeStorage} >Log-out</a></li>

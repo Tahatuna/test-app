@@ -6,6 +6,44 @@ function Tutors({ category }) {
 
     const [tutors, setTutors] = useState([]);
 
+
+    const handleClick = (lesson) => {
+        const profile = localStorage.getItem('profile');
+        const subscribed = localStorage.getItem('subscribed');
+        const userName = localStorage.getItem('userName');
+
+        if (profile !== 'pupil') {
+            alert('Only students can create course requests!');
+        } else if (subscribed !== 'SUBSCRIBER') {
+            alert('To be able to request a lesson, you must first be a subscriber.');
+        } else {
+            const demand = {
+                pupil: {
+                    id: 1,
+                    firstName: userName,
+                    lastName: userName,
+                    email: userName,
+                },
+                lesson: {
+                    id: lesson.id,
+                    name: lesson.name,
+                    description: lesson.description,
+                },
+                educater: {
+                    id: lesson.educater.id,
+                    firstName: lesson.educater.name,
+                    lastName: lesson.educater.lastName,
+                    email: lesson.educater.email,
+                },
+                status: 'PENDING',
+            };
+
+            axios.post('http://localhost:8080/demands', demand).then((response) => {
+                console.log(response.data);
+            });
+        }
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             let response;
@@ -64,9 +102,9 @@ function Tutors({ category }) {
                                     <p className='card-text'>{item.description}</p>
                                     <div className='row'>
                                         <div className='col-8'>
-                                            <a href='#' className='btn btn-lg btn-outline-primary'>
+                                            <button href='#' className='btn btn-lg btn-outline-primary' onClick={() => handleClick(item)}>
                                                 BOOK A LESSON
-                                            </a>
+                                            </button>
                                         </div>
                                         <div className='col-4'>
                                             <p className='fs-2'>${item.price} </p>

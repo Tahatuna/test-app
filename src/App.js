@@ -7,6 +7,7 @@ import NavbarButtons from './components/pages/Navbar/NavbarButtons';
 import SigninModal from './components/user-actions/login-register/SigninModal';
 import SignupModal from './components/user-actions/login-register/SignupModal';
 import UserProfile from './components/user-actions/user-menu/UserProfile';
+import Profile from './components/pages/Tutors/Profile'
 import { useState, useEffect } from 'react';
 
 
@@ -69,6 +70,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="tutors" element={<Tutors />} />
+            <Route path="profile/*" element={<Profile />} />
             <Route path="tutors/:category" element={<Tutors />} />
             <Route path="*" element={<Home />} />
           </Routes>

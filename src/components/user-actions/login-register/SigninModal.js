@@ -60,7 +60,7 @@ function SigninModal() {
                                 <div class="row col-10 mx-auto mb-4">
 
                                     <label htmlFor="userName" className='text-start mt-4 fs-5' style={{ marginLeft: -10 }}>Username</label>
-                                    <input className=" form-control" id="userName" name="userName" placeholder="Jane" onChange={handleChange} value={values.userName} />
+                                    <input className=" form-control" id="userName" name="userName" placeholder="Username" onChange={handleChange} value={values.userName} />
                                     {errors.userName && (<div className="text-start fs-9">Username must be longer than 5 characters</div>)}
                                 </div>
 
@@ -69,8 +69,9 @@ function SigninModal() {
                                     <label htmlFor="password" className='text-start fs-5' style={{ marginLeft: -10 }}>Password</label>
                                     <input className="form-control" id="password" name="password" type="password" placeholder="*****" onChange={handleChange} value={values.password} />
                                     {errors.password && (<div className="text-start fs-9">Password must be longer than 5 characters</div>)}
+                                    <button type="submit" className="btn btn-primary mx-auto mt-5" style={{ width: 370 }}>Log in</button>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-3 mx-auto" style={{ width: 372 }}>Log in</button>
+                               
                             </div>
 
                         </form>
